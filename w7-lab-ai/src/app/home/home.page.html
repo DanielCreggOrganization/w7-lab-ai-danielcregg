@@ -12,7 +12,10 @@
         @for (img of availableImages; track img.url) {
           <ion-col size="12" sizeMd="4">
             <ion-card class="ion-activatable" (click)="selectImage(img.url)">
-              <ion-img [src]="img.url"></ion-img>
+              <ion-img 
+                [src]="img.url" 
+                style="height: 400px; object-fit: cover;"
+              ></ion-img>
               <ion-ripple-effect></ion-ripple-effect>
               <ion-card-content>
                 <ion-radio-group [(ngModel)]="selectedImage" name="imageSelect">
