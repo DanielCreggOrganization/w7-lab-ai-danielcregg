@@ -1,0 +1,7 @@
+{
+  "name": "w7-lab-ai",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

@@ -1,0 +1,68 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Baking with the Gemini API
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Baking with the Gemini API</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="ion-padding">
+    <form (ngSubmit)="onSubmit()">
+      <ion-list>
+        <ion-radio-group [(ngModel)]="selectedImage" name="chosen-image">
+          <ion-item>
+            <ion-label>Image 1</ion-label>
+            <ion-radio slot="start" value="/baked_goods_1.jpg"></ion-radio>
+            <ion-thumbnail slot="end">
+              <ion-img src="/baked_goods_1.jpg"></ion-img>
+            </ion-thumbnail>
+          </ion-item>
+          
+          <ion-item>
+            <ion-label>Image 2</ion-label>
+            <ion-radio slot="start" value="/baked_goods_2.jpg"></ion-radio>
+            <ion-thumbnail slot="end">
+              <ion-img src="/baked_goods_2.jpg"></ion-img>
+            </ion-thumbnail>
+          </ion-item>
+          
+          <ion-item>
+            <ion-label>Image 3</ion-label>
+            <ion-radio slot="start" value="/baked_goods_3.jpg"></ion-radio>
+            <ion-thumbnail slot="end">
+              <ion-img src="/baked_goods_3.jpg"></ion-img>
+            </ion-thumbnail>
+          </ion-item>
+        </ion-radio-group>
+      </ion-list>
+
+      <ion-item>
+        <ion-input
+          label="Instructions"
+          labelPlacement="floating"
+          [(ngModel)]="prompt"
+          name="prompt"
+          placeholder="Enter instructions here"
+          [value]="'Provide an example recipe for the baked goods in the image'"
+        ></ion-input>
+      </ion-item>
+
+      <ion-button type="submit" expand="block" class="ion-margin-top">
+        Generate Recipe
+      </ion-button>
+    </form>
+
+    <ion-card *ngIf="output" class="ion-margin-top">
+      <ion-card-content [innerHTML]="output"></ion-card-content>
+    </ion-card>
+
+    <ion-progress-bar *ngIf="isLoading" type="indeterminate"></ion-progress-bar>
+  </div>
+</ion-content>
