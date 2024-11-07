@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiKey: 'AIzaSyAOU0hos3fTHzhNVJebSqSdOfhOAKYgreY'
+  // Use a placeholder that will be replaced with your actual key when developing locally
+  apiKey: 'YOUR-DEV-API-KEY-HERE'
 };
 
 /*
